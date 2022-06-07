@@ -38,6 +38,10 @@ app.get('/', (request, response) => {
     response.sendFile(__dirname + '/index.html')
 })
 
+app.get('/api', (request, response) => {
+    response.json(coffee)
+  })
+
 app.get('/api/:name', (request, response) => {
     const coffeeName = request.params.name.toLowerCase()
     if(coffee[coffeeName]){
